@@ -26,7 +26,7 @@ public Knoten vorgaenger = null;
 		return this.gewicht.compareTo(rand.getGewicht());
 	}
 	
-	//Thomas hat ein Doppelzimmer gebucht
+	/
 	
 
 }
