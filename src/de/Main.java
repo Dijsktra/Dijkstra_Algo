@@ -151,5 +151,5 @@ public class Main {
 		System.out.println(ergebnis2.vorgaenger.name);
 		System.out.println(ziel.gewicht);
 	}
-
+	// Test von Tobi
 }
