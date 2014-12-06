@@ -5,12 +5,18 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import org.graphstream.graph.Graph;
+import org.graphstream.graph.implementations.SingleGraph;
+
 public class Main {
 
 	public static BufferedReader br = new BufferedReader(new InputStreamReader(
 			System.in));
 
 	public static void main(String[] args) {
+
+		// Graph Erstellung
+		Graph graph = new SingleGraph("Dijkstra");
 
 		Knoten a = new Knoten("A", 0, null);
 		Knoten b = new Knoten("B", 0, null);
@@ -30,6 +36,21 @@ public class Main {
 				new Kante(f, 1) };
 		f.adjacencies = new Kante[] { new Kante(b, 4), new Kante(d, 3),
 				new Kante(e, 1) };
+
+		// Graphen zeichnen
+
+		graph.addNode("A");
+		graph.addNode("B");
+		graph.addNode("C");
+		graph.addNode("D");
+		graph.addNode("E");
+		graph.addNode("F");
+		graph.addEdge("AB", "A", "B", true);
+		graph.addEdge("BC", "B", "C");
+
+		// graph.addEdge("CA", "C", "A");
+		graph.addAttribute("ui.stylesheet",
+				"node#A {shape: box; size: 30px, 20px;fill-mode: plain;fill-color: red;}}");
 
 		ArrayList<Knoten> besucht = new ArrayList<Knoten>();
 		ArrayList<Knoten> rand = new ArrayList<Knoten>();
